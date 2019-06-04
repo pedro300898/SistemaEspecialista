@@ -1,0 +1,45 @@
+dorCabeca(T) --> [leve] | [moderada] | [intensa].
+perguntaTipoDorCabeca :- write('Entre com a intensidade da dor de cabeça: '),
+	nl,
+	read(X),
+	dorCabeca(X).
+	
+dorArticulacao(T) --> [leve] | [moderada] | [intensa].
+perguntaTipoDorCabeca :- write('Entre com a intensidade da dor na articulação: '),
+	nl,
+	read(X),
+	dorArticulacao(X).
+		
+febre(D) --> [1] | [2] | [3] | [4] | [5] | [6] | [7].
+perguntaNivelFebril :- write('Entre com o tempo febril: '),
+	nl,
+	read(X),
+	febre(X).
+	
+inchacoArticulacao(N) --> [leve] | [intensa].
+perguntaNivelInchacoArticulacao :- write('Entre com o seu nível de inchaco na articulação: '),
+	nl,
+	read(X),
+	inchacoArticulacao(X).
+	
+coceira(N) --> [leve] | [moderada] | [intensa].
+perguntaNivelCoceira :- write('Entre com o seu nível de coceira: '),
+	nl,
+	read(X),
+	coceira(X).
+	
+hipertrofia(N) --> [leve] | [moderada] | [intensa].
+perguntaNivelCoceira :- write('Entre com o seu nível de hipertrofia: '),
+	nl,
+	read(X),
+	hipertrofia(X).
+
+sintoma(dengue) --> [febre] | [manchaPele] | [dorMuscular] | [dorArticulacao] | [dorCabeca] |
+					[coceira] | [hipertrofia].
+			
+sintoma(zika) --> [subFebril] | [manchaPele] | [dorMuscular] | [dorArticulacao] | 
+				  [inchacoArticulacao] | [conjutivite] | [dorCabeca] | [coceira] | 
+				  [coceira] | [hipertrofia].
+				  
+sintoma(chikungunya) --> [febre] | [manchaPele] | [dorArticulacao] | [inchacoArticulacao] | 
+						 [conjutivite] | [coceira] | [hipertrofia].
