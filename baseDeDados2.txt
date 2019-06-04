@@ -1,4 +1,4 @@
-dorCabeca(T) --> [leve] | [moderada] | [intensa].
+﻿dorCabeca(T) --> [leve] | [moderada] | [intensa].
 perguntaTipoDorCabeca :- write('Entre com a intensidade da dor de cabeça: '),
 	nl,
 	read(X),
@@ -43,3 +43,5 @@ sintoma(zika) --> [subFebril] | [manchaPele] | [dorMuscular] | [dorArticulacao] 
 				  
 sintoma(chikungunya) --> [febre] | [manchaPele] | [dorArticulacao] | [inchacoArticulacao] | 
 						 [conjutivite] | [coceira] | [hipertrofia].
+
+sintoma(febre, manchaPele) --> dengue.
