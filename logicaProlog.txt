@@ -1,10 +1,18 @@
-encontraDoenca(A,B,C,D,E,F,G,H,I, Z):-
-    sintoma(Z,A),
-    sintoma(Z,B),
-    sintoma(Z,C),
-    sintoma(Z,D),
-    sintoma(Z,E),
-    sintoma(Z,F),
-    sintoma(Z,G),
-    sintoma(Z,H),
-    sintoma(Z,I).
+ListaSintomas = [SintomaA, SintomaB, SintomaC, SintomaD, SintomaE, SintomaF, SintomaG, SintomaH, SintomaI].
+
+encontraDoenca(ListaSintomas, Doenca, Lista):-
+    findall(Doenca, encontraDoencaSintomaExclusivo(ListaSintomas, Doenca), Lista).
+
+encontraDoencaSintomaExclusivo(ListaSintomas, Doenca):-
+    sintoma(Doenca, ListaSintomas[0]),
+    sintoma(Doenca, ListaSintomas[1]),
+    sintoma(Doenca, ListaSintomas[2]),
+    sintoma(Doenca, ListaSintomas[3]),
+    sintoma(Doenca, ListaSintomas[4]),
+    sintoma(Doenca, ListaSintomas[5]),
+    sintoma(Doenca, ListaSintomas[6]),
+    sintoma(Doenca, ListaSintomas[7]),
+    sintoma(Doenca, ListaSintomas[8]).
+
+retornaDoenca(Doenca, ListaSintomas, X) :- 
+    sintoma([X,Doenca], ListaSintomas).
