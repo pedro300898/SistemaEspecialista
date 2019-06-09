@@ -1,0 +1,69 @@
+% febre(X), onde X = dias que está com febre
+febre(1).
+febre(2).
+febre(3).
+febre(4).
+febre(5).
+febre(6).
+febre(7).
+
+% subfebril(X), onde X = dias que encontra-se subfebril
+subFebril(1).
+subFebril(2).
+
+dorArticulacao(leve).
+dorArticulacao(moderada).
+dorArticulacao(intensa).
+
+inchacoArticulacao(leve).
+inchacoArticulacao(intenso).
+
+coceira(leve).
+coceira(moderada).
+coceira(intensa).
+
+hipertrofia(leve).
+hipertrofia(moderada). 
+hipertrofia(intensa).
+
+% classificação dos sintomas
+sintoma(null).
+sintoma(manchaPele).
+sintoma(dorMuscular).
+sintoma(dorCabeca).
+sintoma(conjutivite).
+
+sintoma(febre(1)).
+sintoma(febre(2)).
+sintoma(febre(3)).
+sintoma(febre(4)).
+sintoma(febre(5)).
+sintoma(febre(6)).
+sintoma(febre(7)).
+
+sintoma(subFebril(1)).
+sintoma(subFebril(2)).
+
+sintoma(dorArticulacao(leve)).
+sintoma(dorArticulacao(moderada)).
+sintoma(dorArticulacao(intensa)).
+
+sintoma(inchacoArticulacao(leve)).
+sintoma(inchacoArticulacao(intensa)).
+
+sintoma(coceira(leve)).
+sintoma(coceira(moderada)).
+sintoma(coceira(intensa)).
+
+sintoma(hipertrofia(leve)).
+sintoma(hipertrofia(moderada)). 
+sintoma(hipertrofia(intensa)).
+
+% pequena tentativa de lógica, utilizar: "doenca(sintoma(febre(6)))." retorno deverá ser dengue e true e "doenca(sintoma(febre(3)))." retorno deverá ser false
+doenca(sintoma(febre(X))) :-
+    X >= 4,
+	write('dengue').
+
+% doenca(zika, subFebril(X)).
+doenca(sintoma(subFebril(1))) :-
+	write('zika').
