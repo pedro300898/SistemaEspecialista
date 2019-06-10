@@ -1,18 +1,13 @@
-ListaSintomas = [SintomaA, SintomaB, SintomaC, SintomaD, SintomaE, SintomaF, SintomaG, SintomaH, SintomaI].
+encontraDoenca(ListaSintomas, Lista):-
+   findall(Doenca, retornaDoenca(ListaSintomas, Doenca), Lista).
 
-encontraDoenca(ListaSintomas, Doenca, Lista):-
-    findall(Doenca, encontraDoencaSintomaExclusivo(ListaSintomas, Doenca), Lista).
+splitVetor(HeadListaSintomas, TailListaSintomas, ListaSintomas):-
+    
+    [HeadListaSintomas|TailListaSintomas] = ListaSintomas.
 
-encontraDoencaSintomaExclusivo(ListaSintomas, Doenca):-
-    sintoma(Doenca, ListaSintomas[0]),
-    sintoma(Doenca, ListaSintomas[1]),
-    sintoma(Doenca, ListaSintomas[2]),
-    sintoma(Doenca, ListaSintomas[3]),
-    sintoma(Doenca, ListaSintomas[4]),
-    sintoma(Doenca, ListaSintomas[5]),
-    sintoma(Doenca, ListaSintomas[6]),
-    sintoma(Doenca, ListaSintomas[7]),
-    sintoma(Doenca, ListaSintomas[8]).
+retornaDoenca([],_).
 
-retornaDoenca(Doenca, ListaSintomas, X) :- 
-    sintoma([X,Doenca], ListaSintomas).
+retornaDoenca(ListaSintomas, Doenca) :- 
+    splitVetor(HeadListaSintomas,TailListaSintomas,ListaSintomas),
+    sintoma(Doenca, HeadListaSintomas),
+    retornaDoenca(TailListaSintomas, Doenca).
